@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "lookbk-plugin",
+  "description": "The Lookbk plugin: find visual agent skills on lookbk.dev, see the rendered preview, and install the one you pick.",
+  "owner": {
+    "name": "Lookbk",
+    "email": "support@lookbk.dev",
+    "url": "https://lookbk.dev"
+  },
+  "plugins": [
+    {
+      "name": "lookbk",
+      "source": "./",
+      "description": "Find a Lookbk visual skill, see its real rendered preview, and install it after you approve the command.",
+      "category": "design",
+      "tags": ["video", "slides", "images", "hero-section", "landing-page"]
+    }
+  ]
+}

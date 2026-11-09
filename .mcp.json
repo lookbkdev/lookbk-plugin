@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "lookbk": {
+      "type": "http",
+      "url": "https://lookbk.dev/api/mcp"
+    }
+  }
+}

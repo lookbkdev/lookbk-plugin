@@ -1,0 +1,29 @@
+{
+  "name": "lookbk",
+  "displayName": "Lookbk",
+  "version": "1.0.0",
+  "description": "Find a Lookbk visual skill (launch films, website heroes, slide decks, link-preview images), see the real rendered preview first, and install the one you pick only after you approve the exact command. Searches the read-only Lookbk catalog at lookbk.dev; this plugin contains no code.",
+  "author": {
+    "name": "Lookbk",
+    "email": "support@lookbk.dev",
+    "url": "https://lookbk.dev"
+  },
+  "homepage": "https://lookbk.dev/skills",
+  "repository": "https://github.com/lookbkdev/lookbk-plugin",
+  "license": "MIT",
+  "keywords": [
+    "video",
+    "launch-video",
+    "slides",
+    "og-image",
+    "hero-section",
+    "landing-page",
+    "design",
+    "skills"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://github.com/lookbkdev/lookbk-plugin#readme",
+  "supportUrl": "https://github.com/lookbkdev/lookbk-plugin/issues",
+  "privacyPolicyUrl": "https://lookbk.dev/privacy",
+  "termsOfServiceUrl": "https://lookbk.dev/terms"
+}
