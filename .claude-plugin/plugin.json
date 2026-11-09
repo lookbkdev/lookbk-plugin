@@ -1,7 +1,7 @@
 {
   "name": "lookbk",
   "displayName": "Lookbk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Find a Lookbk visual skill (launch films, website heroes, slide decks, link-preview images), see the real rendered preview first, and install the one you pick only after you approve the exact command. Searches the read-only Lookbk catalog at lookbk.dev; this plugin contains no code.",
   "author": {
     "name": "Lookbk",

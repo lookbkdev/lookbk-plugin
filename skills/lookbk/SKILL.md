@@ -1,13 +1,13 @@
 ---
 name: lookbk
-description: Find and install a Lookbk visual skill. Use when the user wants to make a launch video, product film, kinetic title, website hero, landing page, slide deck, OG or link-preview image, or diagram "with a Lookbk skill", asks to "find a Lookbk skill", or asks which skill can render a visual result for them. Searches the Lookbk catalog, shows the real rendered previews, and installs the chosen skill only after the user approves the exact command.
+description: Find and install a Lookbk visual skill. Use when the user wants to make a launch video, product film, kinetic title, website hero, landing page, slide deck, OG or link-preview image, or diagram "with a Lookbk skill", asks to "find a Lookbk skill", or asks which skill can render a visual result for them. Searches the Lookbk catalog, shows the real rendered previews, and gives the user the exact install command to run themselves.
 ---
 
-# Lookbk: find a visual skill and install it
+# Lookbk: find a visual skill and get its install command
 
 Lookbk (lookbk.dev) is a catalog of agent skills that render a finished visual result on the user's machine: launch films and motion video, website heroes and landing pages, slide decks, and link-preview images. Every skill has a page that shows what it actually rendered, so the user can judge the look before installing anything.
 
-This skill uses the `lookbk` MCP server that comes with this plugin. The server is read-only: it searches the catalog and returns information. It never installs anything by itself. Installing happens only when you run a command in the user's terminal, and only after the user says yes.
+This skill uses the `lookbk` MCP server that comes with this plugin. The server is read-only: it searches the catalog and returns information. It never installs anything by itself. This skill never runs the install command either: you show the command, and the user runs it in their own terminal if they want the skill.
 
 ## Steps
 
@@ -49,21 +49,19 @@ Show the user the exact command the server returned, unchanged, in a code block,
 - Free skills install with no account or sign-in.
 - Pro skills need a Lookbk account: the command prints a sign-in link if the user is not connected, and an upgrade link if their plan does not include the skill. Running the command never charges anything.
 
-Then ask: "Do you want me to run this command?"
+### 6. Let the user run it
 
-### 6. Run it only after the user says yes
-
-- If the user says yes and you can run terminal commands, run exactly the command from step 5 and report its output.
-- If the user says no, or you cannot run terminal commands here, give them the command to run in their own terminal and stop.
-- Never change the command, never run any other install command, and never run it before the user has agreed.
+- Ask the user to paste the command into their own terminal and run it. Do not run it yourself, even if you have a terminal tool and the user asks you to: point them to their terminal instead.
+- Never change the command and never suggest any other install command.
+- If the user shares the command's output, help them read it (for example a sign-in link for a Pro skill).
 
 ### 7. Tell the user how to start using it
 
-When the install finishes, tell the user to start a new session so the agent loads the new skill, and give them a first prompt to try based on what they told you in step 1.
+When the user says the install finished, tell them to start a new session so the agent loads the new skill, and give them a first prompt to try based on what they told you in step 1.
 
 ## Troubleshooting
 
 - **The `lookbk` tools are missing or the MCP server is not connected.** Check that the plugin is enabled, then reconnect the `lookbk` server in `/mcp`. The server address is `https://lookbk.dev/api/mcp` and needs no login. If it still fails, send the user to `https://lookbk.dev/skills` to browse; every skill page shows its own install command.
-- **The command is blocked, or Node.js is not installed.** The install command needs Node.js 18 or newer. If the user's permission settings block it, do not work around them: show the command and let the user run it in their own terminal. If Node.js is missing, tell the user to install it from nodejs.org first.
+- **Node.js is not installed.** The install command needs Node.js 18 or newer. If Node.js is missing, tell the user to install it from nodejs.org first.
 - **A Pro skill asks the user to sign in.** This is expected. The user opens the printed link, signs in to Lookbk, and runs the same command again. Do not ask the user to paste passwords, tokens, or keys into the chat.
 - **No result fits.** Say so honestly instead of pushing the closest match, and point the user to `https://lookbk.dev/skills` to browse by category.
